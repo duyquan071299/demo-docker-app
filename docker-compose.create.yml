@@ -1,0 +1,8 @@
+version: "3.8"
+services: 
+    create-app:
+        container_name: cicd-demo
+        image: node:12.19.0-slim
+        command: bash -c "npx create-react-app cicd-demo && rm -rf cicd-demo/node_modules/"
+        volumes:
+            - ./cicd-demo/:/cicd-demo/
